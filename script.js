@@ -127,6 +127,7 @@ function removeItem(index) {
   cart.splice(index, 1);
   renderCart();
     }
+  <button onclick="addToCart('${p.name}', '${p.price}')">Add to Cart</button>
 // BUY BUTTON
 function buyNow(name) {
   alert("You selected: " + name + " 🛒");
