@@ -56,6 +56,48 @@ function filterCategory(category) {
   color: #22c55e;
   font-weight: bold;
                                 }
+  const products = [
+  { name: "HP Laptop", category: "electronics", price: "₦450,000" },
+  { name: "iPhone 14", category: "electronics", price: "₦900,000" },
+  { name: "Nike Shoes", category: "fashion", price: "₦45,000" },
+  { name: "Wedding Gown", category: "wedding", price: "₦120,000" },
+  { name: "POS Machine", category: "electronics", price: "₦80,000" },
+  { name: "Tailoring Fabric", category: "tailoring", price: "₦15,000" },
+  { name: "Dining Table", category: "home", price: "₦200,000" },
+  { name: "Food Pack", category: "food", price: "₦5,000" }
+];
+
+// DISPLAY PRODUCTS
+function displayProducts(data) {
+  let container = document.getElementById("products");
+
+  container.innerHTML = data.map(p => `
+    <div class="product-card">
+      <h3>${p.name}</h3>
+      <p>${p.category}</p>
+      <p class="price">${p.price}</p>
+      <button onclick="buyNow('${p.name}')">Buy Now</button>
+    </div>
+  `).join("");
+}
+
+displayProducts(products);
+
+// SEARCH FUNCTION
+function searchProducts() {
+  let value = document.getElementById("search").value.toLowerCase();
+
+  let filtered = products.filter(p =>
+    p.name.toLowerCase().includes(value)
+  );
+
+  displayProducts(filtered);
+}
+
+// BUY BUTTON
+function buyNow(name) {
+  alert("You selected: " + name + " 🛒");
+      }
   result.innerHTML = `
     <h3>${category.toUpperCase()}</h3>
     <p>${data[category]}</p>
