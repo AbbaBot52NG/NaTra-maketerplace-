@@ -93,7 +93,40 @@ function searchProducts() {
 
   displayProducts(filtered);
 }
+let cart = [];
 
+// ADD TO CART
+function addToCart(name, price) {
+  cart.push({ name, price });
+  renderCart();
+}
+
+// RENDER CART
+function renderCart() {
+  let container = document.getElementById("cart-items");
+  let totalBox = document.getElementById("total");
+
+  let total = 0;
+
+  container.innerHTML = cart.map((item, index) => {
+    total += Number(item.price.replace("₦", "").replace(",", ""));
+
+    return `
+      <div class="cart-item">
+        <span>${item.name} - ${item.price}</span>
+        <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+      </div>
+    `;
+  }).join("");
+
+  totalBox.innerText = "Total: ₦" + total.toLocaleString();
+}
+
+// REMOVE ITEM
+function removeItem(index) {
+  cart.splice(index, 1);
+  renderCart();
+    }
 // BUY BUTTON
 function buyNow(name) {
   alert("You selected: " + name + " 🛒");
