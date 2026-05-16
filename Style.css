@@ -125,7 +125,35 @@ button {
   min-height: 100px;
   color: #cbd5e1;
 }
+.cart-section {
+  padding: 50px 20px;
+  background: #0f172a;
+  margin-top: 40px;
+}
 
+#cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart-item {
+  background: #1f2937;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 /* FOOTER */
 footer {
   text-align: center;
