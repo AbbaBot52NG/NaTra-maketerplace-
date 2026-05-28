@@ -116,7 +116,30 @@ button {
   color: black;
   transform: scale(1.05);
 }
+.seller-section {
+  padding: 40px 20px;
+  text-align: center;
+  background: #111827;
+  margin-top: 30px;
+}
 
+.seller-section input,
+.seller-section select {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 60%;
+  border-radius: 8px;
+  border: none;
+}
+
+.seller-section button {
+  background: #00d4ff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
 .result-box {
   margin-top: 40px;
   padding: 30px;
