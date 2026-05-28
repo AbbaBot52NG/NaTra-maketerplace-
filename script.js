@@ -100,7 +100,33 @@ function addToCart(name, price) {
   cart.push({ name, price });
   renderCart();
 }
+// ADD NEW PRODUCT FROM SELLER
+function addProduct() {
+  let name = document.getElementById("pname").value;
+  let price = document.getElementById("pprice").value;
+  let category = document.getElementById("pcategory").value;
 
+  if (!name || !price) {
+    alert("Please fill all fields");
+    return;
+  }
+
+  let newProduct = {
+    name: name,
+    price: "₦" + price,
+    category: category
+  };
+
+  products.push(newProduct);
+
+  displayProducts(products);
+
+  alert("Product added successfully 🚀");
+
+  // clear inputs
+  document.getElementById("pname").value = "";
+  document.getElementById("pprice").value = "";
+}
 // RENDER CART
 function renderCart() {
   let container = document.getElementById("cart-items");
